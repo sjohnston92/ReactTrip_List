@@ -11,6 +11,18 @@ class App extends Component {
       {id:3, name:"MTB Mckenzie River", city:"Sisters", state:"OR",},
     ]
   }
+
+  removeTrip = (id) => {
+    const tripsRe = this.state.trips.filter(trip => {
+      if (trip.id !== id)
+      return trip
+    });
+    this.setState({trips: [...tripsRe],});
+    };
+
+
+
+
   addTrip = (trip) => {
     console.log(trip);
     const newTrip = {...trip, id:Math.random() + ""};
@@ -24,7 +36,10 @@ class App extends Component {
     return (
       <div>
         <h1>Vacation List</h1>
-        <Trips trips={this.state.trips}/>
+        <Trips 
+        trips={this.state.trips}
+        remove={this.removeTrip}
+        />
         <br />
         <br />
         <TripForm addTrip={this.addTrip}/>
