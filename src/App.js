@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Trips from "./Trips"
+import TripForm from "./TripForm"
 
 class App extends Component {
   state= {
@@ -10,8 +11,13 @@ class App extends Component {
       {id:3, name:"MTB Mckenzie River", city:"Sisters", state:"OR",},
     ]
   }
-
-
+  addTrip = (trip) => {
+    console.log(trip);
+    const newTrip = {...trip, id:Math.random() + ""};
+    this.setState({
+      trips: [newTrip, ...this.state.trips]
+    });
+  };
 
 
   render() {
@@ -19,6 +25,9 @@ class App extends Component {
       <div>
         <h1>Vacation List</h1>
         <Trips trips={this.state.trips}/>
+        <br />
+        <br />
+        <TripForm addTrip={this.addTrip}/>
       </div>
     );
   }
