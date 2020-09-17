@@ -1,5 +1,6 @@
 import React from "react";
 
+
 class TripForm extends React.Component {
   state = { name: "", city:"",  state:""};
 
@@ -30,6 +31,7 @@ render(){
       <input required type="text" name="city" value={city} onChange={this.handleChange}></input>
       <label>State:</label>
       <input required type="text" name="state" value={state} onChange={this.handleChange}></input>
+      <br />
       <br />
       <button onClick={this.handleSubmit}>Submit</button>
     </form>

@@ -3,6 +3,7 @@ import './App.css';
 import Trips from "./Trips"
 import TripForm from "./TripForm"
 
+
 class App extends Component {
   state= {
     trips:[
@@ -34,7 +35,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="box">
         <h1>Vacation List</h1>
         <Trips 
         trips={this.state.trips}
@@ -42,6 +43,8 @@ class App extends Component {
         />
         <br />
         <br />
+        <br />
+        <h2>Add Trip</h2>
         <TripForm addTrip={this.addTrip}/>
       </div>
     );
