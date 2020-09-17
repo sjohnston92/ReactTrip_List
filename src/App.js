@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Trips from "./Trips"
 import TripForm from "./TripForm"
+import Airplane from './Airplane'
 
 
 class App extends Component {
@@ -46,6 +47,8 @@ class App extends Component {
         <br />
         <h2>Add Trip</h2>
         <TripForm addTrip={this.addTrip}/>
+        <br/>
+        <Airplane />
       </div>
     );
   }
